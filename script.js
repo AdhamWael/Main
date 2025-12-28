@@ -764,57 +764,8 @@ let velocityY = 0;
 const projectHoverContainer = document.getElementById('projectHoverContainer');
 const projectHoverImage = document.getElementById('projectHoverImage');
 
-if (isMouseDevice && projectHoverContainer && projectHoverImage) {
+if (projectHoverContainer && projectHoverImage) {
     document.querySelectorAll('.project-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            const imageSrc = item.dataset.image;
-            if (imageSrc && projectHoverContainer && projectHoverImage) {
-                projectHoverImage.src = imageSrc;
-                gsap.to(projectHoverContainer, {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.6,
-                    ease: "power3.out"
-                });
-                gsap.to(projectHoverImage, {
-                    scale: 1,
-                    duration: 1.2,
-                    ease: "power2.out"
-                });
-
-                // Show VIEW label
-                if (follower) follower.classList.add('project-active');
-
-                // Stagger tags
-                const tags = item.querySelectorAll('.project-tags span');
-                gsap.fromTo(tags,
-                    { y: 10, opacity: 0 },
-                    { y: 0, opacity: 1, stagger: 0.1, duration: 0.4, ease: "power2.out" }
-                );
-            }
-        });
-
-        item.addEventListener('mouseleave', () => {
-            // Reset tags
-            const tags = item.querySelectorAll('.project-tags span');
-            gsap.to(tags, { y: 0, opacity: 0.5, duration: 0.3 });
-            if (projectHoverContainer) {
-                gsap.to(projectHoverContainer, {
-                    opacity: 0,
-                    scale: 0.8,
-                    duration: 0.4,
-                    ease: "power3.in"
-                });
-                gsap.to(projectHoverImage, {
-                    scale: 1.2,
-                    duration: 0.4
-                });
-
-                // Hide VIEW label
-                if (follower) follower.classList.remove('project-active');
-            }
-        });
-
         item.addEventListener('mousemove', (e) => {
             const title = item.querySelector('.project-title');
             if (title) {
@@ -1462,6 +1413,8 @@ if (isMouseDevice && cursor && follower) {
         lastMouseY = mouseY;
     });
 
+    let lastHoveredItem = null;
+
     // Use GSAP for smooth movement
     gsap.to({}, {
         duration: 0.016,
@@ -1492,21 +1445,76 @@ if (isMouseDevice && cursor && follower) {
                     overwrite: "auto"
                 });
             }
-        }
-    });
 
-    // Hover states
-    document.querySelectorAll('a, button, .project-item, .magnetic-wrap, [role="button"]').forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            follower.classList.add('active');
-            // Fade out dot to focus on the expanded follower
-            gsap.to(cursor, { opacity: 0, scale: 0, duration: 0.3 });
-        });
-        el.addEventListener('mouseleave', () => {
-            follower.classList.remove('active');
-            // Bring back the dot
-            gsap.to(cursor, { opacity: 1, scale: 1, duration: 0.3 });
-        });
+            // --- Centralized Hover Detection ---
+            // This allows effects to work even if mouse is stationary and page scrolls
+            const elementUnderCursor = document.elementFromPoint(mouseX, mouseY);
+            const interactiveElement = elementUnderCursor?.closest('a, button, .project-item, .magnetic-wrap, [role="button"]');
+
+            if (interactiveElement !== lastHoveredItem) {
+                if (lastHoveredItem) {
+                    // Handle Leave
+                    follower.classList.remove('active');
+                    follower.classList.remove('project-active');
+                    gsap.to(cursor, { opacity: 1, scale: 1, duration: 0.3 });
+
+                    if (lastHoveredItem.classList.contains('project-item')) {
+                        // Reset project tags
+                        const tags = lastHoveredItem.querySelectorAll('.project-tags span');
+                        gsap.to(tags, { y: 0, opacity: 0.5, duration: 0.3 });
+
+                        // Hide project hover image
+                        if (projectHoverContainer) {
+                            gsap.to(projectHoverContainer, {
+                                opacity: 0,
+                                scale: 0.8,
+                                duration: 0.4,
+                                ease: "power3.in"
+                            });
+                            gsap.to(projectHoverImage, {
+                                scale: 1.2,
+                                duration: 0.4
+                            });
+                        }
+                    }
+                }
+
+                if (interactiveElement) {
+                    // Handle Enter
+                    follower.classList.add('active');
+                    gsap.to(cursor, { opacity: 0, scale: 0, duration: 0.3 });
+
+                    if (interactiveElement.classList.contains('project-item')) {
+                        follower.classList.add('project-active');
+
+                        // Show project hover image
+                        const imageSrc = interactiveElement.dataset.image;
+                        if (imageSrc && projectHoverContainer && projectHoverImage) {
+                            projectHoverImage.src = imageSrc;
+                            gsap.to(projectHoverContainer, {
+                                opacity: 1,
+                                scale: 1,
+                                duration: 0.6,
+                                ease: "power3.out"
+                            });
+                            gsap.to(projectHoverImage, {
+                                scale: 1,
+                                duration: 1.2,
+                                ease: "power2.out"
+                            });
+
+                            // Stagger tags
+                            const tags = interactiveElement.querySelectorAll('.project-tags span');
+                            gsap.fromTo(tags,
+                                { y: 10, opacity: 0 },
+                                { y: 0, opacity: 1, stagger: 0.1, duration: 0.4, ease: "power2.out" }
+                            );
+                        }
+                    }
+                }
+                lastHoveredItem = interactiveElement;
+            }
+        }
     });
 
     // Click states
