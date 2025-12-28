@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adham Eldeeb — Creative Web Developer & Designer</title>
+    <meta name="description"
+        content="Based in Egypt, Adham Eldeeb is a creative web developer specializing in high-end frontend experiences, modern UI/UX, and immersive interactive design.">
+    <meta name="keywords"
+        content="Adham Eldeeb, Creative Web Developer, Frontend Engineer, UI Designer, Egypt Web Dev, Portfolio 2024, React Developer">
+    <meta name="author" content="Adham Eldeeb">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourportfolio.com/">
+    <meta property="og:title" content="Adham Eldeeb — Creative Web Developer & Designer">
+    <meta property="og:description"
+        content="Crafting immersive digital experiences through clean code and innovative design. Explore my latest work.">
+    <meta property="og:image" content="https://yourportfolio.com/Wide.jpg">
+
+
+    <meta name="theme-color" content="#c4d600">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Cairo:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower">
+        <span class="cursor-label" data-i18n="view_label">VIEW</span>
+        <div class="cursor-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Page loader: cinematic entrance -->
+    <div id="page-loader" class="page-loader">
+        <div class="loader-inner">
+            <h2 class="loader-text">
+                <span class="loader-letter">A</span>
+                <span class="loader-letter">d</span>
+                <span class="loader-letter">h</span>
+                <span class="loader-letter">a</span>
+                <span class="loader-letter">m</span>
+                <span class="loader-letter">&nbsp;</span>
+                <span class="loader-letter">E</span>
+                <span class="loader-letter">l</span>
+                <span class="loader-letter">d</span>
+                <span class="loader-letter">e</span>
+                <span class="loader-letter">e</span>
+                <span class="loader-letter">b</span>
+            </h2>
+            <div class="loader-bar-container">
+                <div class="loader-bar-fill"></div>
+            </div>
+            <div class="loader-status" data-i18n="loader_status">Initializing System</div>
+            <div class="loader-percentage">00</div>
+        </div>
+    </div>
+    <header class="site-header reveal-element" id="home">
+        <div class="header-progress-bar"></div>
+        <div class="logo-wrapper">
+            <a href="index.html" class="logo-link" data-i18n="adham_name">Adham Eldeeb</a>
+            <div class="header-info-row">
+                <div class="availability-status">
+                    <span class="status-dot"></span>
+                    <span class="status-text" data-i18n="available">Available</span>
+                </div>
+                <span class="header-time-divider">|</span>
+                <div class="header-local-time">
+                    <span class="nav-time">19:35</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav">
+            <div class="nav-links-wrapper">
+                <div class="magnetic-wrap"><a href="#selectedWork" class="nav-link" data-i18n="nav_work">Work <span
+                            class="nav-count">03</span></a></div>
+                <div class="magnetic-wrap"><a href="#about" class="nav-link" data-i18n="nav_about">About</a></div>
+                <div class="magnetic-wrap"><a href="#services" class="nav-link" data-i18n="nav_services">Services</a>
+                </div>
+            </div>
+            <div class="nav-actions">
+                <div class="language-switcher magnetic-wrap">
+                    <button id="lang-toggle" class="lang-btn">
+                        <span class="lang-text">AR</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                </div>
+                <div class="magnetic-wrap">
+                    <a href="#contact" class="nav-cta-pill">
+                        <span data-i18n="nav_talk">Let's talk</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- New Mobile Menu Toggle -->
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+            <div class="toggle-icon">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+            </div>
+        </button>
+    </header>
+
+    <!-- Fullscreen Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay">
+        <button class="mobile-nav-close" aria-label="Close menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-links">
+                <a href="#selectedWork" class="m-nav-link" data-link-num="01" data-i18n="nav_work">Work</a>
+                <a href="#about" class="m-nav-link" data-link-num="02" data-i18n="nav_about">About</a>
+                <a href="#services" class="m-nav-link" data-link-num="03" data-i18n="nav_services">Services</a>
+                <a href="#contact" class="m-nav-link" data-link-num="04" data-i18n="nav_talk">Let's talk</a>
+            </div>
+
+            <div class="mobile-lang-switcher">
+                <button class="m-lang-btn" id="m-lang-toggle">
+                    <span class="lang-text">AR</span>
+                    <i class="fas fa-globe"></i>
+                </button>
+            </div>
+
+            <div class="mobile-nav-footer-new">
+                <div class="m-footer-section">
+                    <span class="m-label" data-i18n="availability_label">Availability</span>
+                    <p class="m-value" data-i18n="available">Available for new projects</p>
+                </div>
+                <div class="m-footer-section">
+                    <span class="m-label" data-i18n="label_email">Let's connect</span>
+                    <a href="mailto:contact@adham.com" class="m-value email-link">contact@adham.com</a>
+                </div>
+                <div class="m-footer-socials">
+                    <a href="#" class="m-social-link">Instagram</a>
+                    <a href="#" class="m-social-link">LinkedIn</a>
+                    <a href="#" class="m-social-link">Behance</a>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-nav-bg"></div>
+    </div>
+
+    <main class="hero-section">
+        <div class="hero-background-v2">
+            <canvas id="hero-canvas"></canvas>
+            <div class="mesh-gradient"></div>
+            <div class="grid-overlay"></div>
+            <div class="noise-overlay"></div>
+        </div>
+        <div class="hero-image-container reveal-element">
+            <img src="download.png" alt="Web Developer" class="hero-image" id="heroImage">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title reveal-element" id="heroTitle">
+                <span class="line"><span>WEB</span></span>
+                <span class="line"><span>DEVEL</span></span>
+                <span class="line"><span>OPER</span></span>
+            </h1>
+
+            <div class="hero-description-container reveal-element">
+                <div class="hero-description">
+                    <div class="hero-card-header">
+                        <span class="card-tag" data-i18n="hero_tag">Freelance</span>
+                        <div class="card-status">
+                            <span class="pulse-dot"></span>
+                            <span class="status-msg" data-i18n="hero_status">Available for hire</span>
+                        </div>
+                    </div>
+                    <div class="arrow-icon">↘</div>
+                    <p id="heroDescription">
+                        A freelance web developer based in Egypt.
+                        Specializing in modern frontend technologies and creative coding,
+                        I build immersive and performant web experiences.
+                    </p>
+                    <div class="hero-card-footer">
+                        <a href="#selectedWork" class="explore-btn" data-i18n="hero_btn">See Projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-indicators" id="carouselIndicators">
+            <span class="indicator active" data-index="0"></span>
+            <span class="indicator" data-index="1"></span>
+            <span class="indicator" data-index="2"></span>
+        </div>
+    </main>
+
+    <!-- Selected Work Section -->
+    <section class="selected-work" id="selectedWork">
+        <div class="section-header reveal-on-scroll" id="selectedWorkHeader">
+            <h2 data-i18n="work_title">Selected Work</h2>
+            <span class="work-count">(03)</span>
+        </div>
+        <div class="project-list">
+
+            <div class="project-item reveal-on-scroll" data-image="Wide.jpg">
+                <div class="project-item-left">
+                    <span class="project-number">01</span>
+                    <h3 class="project-title">E-Commerce Platform</h3>
+                </div>
+                <div class="project-item-right">
+                    <div class="project-tags">
+                        <span>React</span>
+                        <span>Next.js</span>
+                    </div>
+                    <span class="project-category">Web Design / Dev</span>
+                </div>
+            </div>
+            <div class="project-item reveal-on-scroll" data-image="darris.jpg">
+                <div class="project-item-left">
+                    <span class="project-number">02</span>
+                    <h3 class="project-title">Real Estate </br> Website</h3>
+                </div>
+                <div class="project-item-right">
+                    <div class="project-tags">
+                        <span>Webflow</span>
+                        <span>GSAP</span>
+                    </div>
+                    <span class="project-category">Development</span>
+                </div>
+            </div>
+            <div class="project-item reveal-on-scroll" data-image="Wide.jpg">
+                <div class="project-item-left">
+                    <span class="project-number">03</span>
+                    <h3 class="project-title">Interactive </br> Learning Website</h3>
+                </div>
+                <div class="project-item-right">
+                    <div class="project-tags">
+                        <span>UI/UX</span>
+                        <span>Motion</span>
+                    </div>
+                    <span class="project-category">Branding / Dev</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="archive-link-container reveal-on-scroll">
+            <a href="https://github.com/AdhamWael?tab=repositories" target="_blank" class="view-all-btn">
+                <span class="btn-text" data-i18n="view_archive">View Full Archive</span>
+                <div class="btn-icon">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!--The Process-->
+    <section class="process-section" id="process">
+        <div class="section-header reveal-on-scroll">
+            <h2 data-i18n="process_title">Process</h2>
+            <span class="work-count" data-i18n="process_subtitle">(The Workflow)</span>
+        </div>
+
+        <div class="process-container">
+            <div class="process-timeline-line">
+                <div class="line-progress"></div>
+            </div>
+
+            <div class="process-steps-wrapper">
+                <div class="process-step-v2 reveal-on-scroll" data-step="01">
+                    <div class="step-visual">
+                        <div class="step-icon-wrap">
+                            <i class="fas fa-search"></i>
+                            <div class="step-blob"></div>
+                        </div>
+                        <span class="step-number-v2">01</span>
+                    </div>
+                    <div class="step-info">
+                        <h3 class="step-title-v2" data-i18n="step1_title">Strategy & Discovery</h3>
+                        <p class="step-description-v2" data-i18n="step1_desc">
+                            Deep-diving into your brand's DNA, market position, and user needs to create a bulletproof
+                            digital blueprint.
+                        </p>
+                        <div class="step-details-v2">
+                            <span data-i18n="step1_detail1">Market Research</span>
+                            <span data-i18n="step1_detail2">User Personas</span>
+                            <span data-i18n="step1_detail3">Project Roadmap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step-v2 reveal-on-scroll" data-step="02">
+                    <div class="step-visual">
+                        <div class="step-icon-wrap">
+                            <i class="fas fa-pencil-ruler"></i>
+                            <div class="step-blob"></div>
+                        </div>
+                        <span class="step-number-v2">02</span>
+                    </div>
+                    <div class="step-info">
+                        <h3 class="step-title-v2" data-i18n="step2_title">Creative Design</h3>
+                        <p class="step-description-v2" data-i18n="step2_desc">
+                            Translating strategy into stunning, high-fidelity UI/UX that prioritizes aesthetic
+                            excellence and intuitive interaction.
+                        </p>
+                        <div class="step-details-v2">
+                            <span data-i18n="step2_detail1">Visual Identity</span>
+                            <span data-i18n="step2_detail2">Prototyping</span>
+                            <span data-i18n="step2_detail3">Motion Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step-v2 reveal-on-scroll" data-step="03">
+                    <div class="step-visual">
+                        <div class="step-icon-wrap">
+                            <i class="fas fa-terminal"></i>
+                            <div class="step-blob"></div>
+                        </div>
+                        <span class="step-number-v2">03</span>
+                    </div>
+                    <div class="step-info">
+                        <h3 class="step-title-v2" data-i18n="step3_title">Technical Build</h3>
+                        <p class="step-description-v2" data-i18n="step3_desc">
+                            Engineering accessible, high-performance frontend code using modern tech stacks like React,
+                            Next.js, and GSAP.
+                        </p>
+                        <div class="step-details-v2">
+                            <span data-i18n="step3_detail1">Clean Architecture</span>
+                            <span data-i18n="step3_detail2">API Integration</span>
+                            <span data-i18n="step3_detail3">Responsive Logic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-step-v2 reveal-on-scroll" data-step="04">
+                    <div class="step-visual">
+                        <div class="step-icon-wrap">
+                            <i class="fas fa-rocket"></i>
+                            <div class="step-blob"></div>
+                        </div>
+                        <span class="step-number-v2">04</span>
+                    </div>
+                    <div class="step-info">
+                        <h3 class="step-title-v2" data-i18n="step4_title">Launch & Scale</h3>
+                        <p class="step-description-v2" data-i18n="step4_desc">
+                            Performance tuning, SEO implementation, and final staging to ensure a flawless, high-speed
+                            digital launch.
+                        </p>
+                        <div class="step-details-v2">
+                            <span data-i18n="step4_detail1">Speed Tuning</span>
+                            <span data-i18n="step4_detail2">SEO Excellence</span>
+                            <span data-i18n="step4_detail3">Testing & QA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="section-header reveal-on-scroll" id="aboutHeader">
+            <h2 data-i18n="about_title">About</h2>
+            <span class="work-count" data-i18n="about_subtitle">(The Creator)</span>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-main-content reveal-on-scroll">
+                <div class="about-intro">
+                    <p class="lead-text" data-i18n="about_lead">
+                        A multidisciplinary developer and designer crafting high-end digital experiences that merge
+                        technical precision with creative vision.
+                    </p>
+                    <div class="about-description">
+                        <p data-i18n="about_p1">
+                            Based in Cairo, I bridge the gap between aesthetics and functionality. I believe the web is
+                            more than just a tool—it's a canvas for storytelling and human connection.
+                        </p>
+                        <p data-i18n="about_p2">
+                            My approach combines a deep understanding of frontend engineering with a keen eye for
+                            minimalist design, ensuring every pixel serves a purpose and every interaction feels
+                            intuitive.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-philosophy reveal-on-scroll">
+                    <div class="philosophy-item">
+                        <span class="phi-num">01</span>
+                        <div class="phi-text">
+                            <h4 data-i18n="phi1_title">Design with Purpose</h4>
+                            <p data-i18n="phi1_desc">Every element should solve a problem or enhance the user's journey.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="philosophy-item">
+                        <span class="phi-num">02</span>
+                        <div class="phi-text">
+                            <h4 data-i18n="phi2_title">Build for Performance</h4>
+                            <p data-i18n="phi2_desc">Speed and clean code are the foundation of a premium web
+                                experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="about-media reveal-on-scroll">
+                <div class="about-image-wrapper">
+                    <img src="3.jpg" alt="Adham Eldeeb Portrait" class="about-portrait">
+                    <div class="image-overlay-text" data-i18n="adham_name">ADHAM ELDEEB</div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">03+</span>
+                        <span class="stat-label" data-i18n="stat_exp">Years of Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label" data-i18n="stat_projects">Projects Completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-showcase-header">
+            <h3 class="subsection-title" data-i18n="expertise_title">Core Expertise</h3>
+            <div class="skills-showcase-line"></div>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Bento Item 1: Wide Engineering -->
+            <div class="bento-item item-wide reveal-on-scroll" data-skill="engineering">
+                <div class="item-overlay"></div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <span class="item-num">01</span>
+                        <div class="item-icon"><i class="fas fa-terminal"></i></div>
+                    </div>
+                    <div class="item-main">
+                        <h4 data-i18n="skill1_title">Technical Architecture</h4>
+                        <p data-i18n="skill1_desc">Engineering high-performance, accessible digital products with React,
+                            Next.js, and
+                            specialized animation pipelines. Focused on clean code and system scalability.</p>
+                    </div>
+                    <div class="item-footer">
+                        <div class="tool-pills">
+                            <span>React</span>
+                            <span>Next.js</span>
+                            <span>Three.js</span>
+                            <span>GSAP</span>
+                            <span>Tailwind</span>
+                        </div>
+                        <div class="item-stat">
+                            <span class="stat-val">99%</span>
+                            <span class="stat-lab" data-i18n="performance">Performance</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Item 2: Square Design -->
+            <div class="bento-item item-square reveal-on-scroll" data-skill="design">
+                <div class="item-overlay"></div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <span class="item-num">02</span>
+                        <div class="item-icon"><i class="fas fa-bezier-curve"></i></div>
+                    </div>
+                    <div class="item-main">
+                        <h4 data-i18n="skill2_title">Visual Identity</h4>
+                        <p data-i18n="skill2_desc">Pixel-perfect UI/UX design with a focus on immersive aesthetics and
+                            human-centered
+                            motion.</p>
+                    </div>
+                    <div class="item-footer">
+                        <div class="tool-pills">
+                            <span>Figma</span>
+                            <span>C4D</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bento Item 3: Square Strategy -->
+            <div class="bento-item item-square reveal-on-scroll" data-skill="strategy">
+                <div class="item-overlay"></div>
+                <div class="item-content">
+                    <div class="item-header">
+                        <span class="item-num">03</span>
+                        <div class="item-icon"><i class="fas fa-brain"></i></div>
+                    </div>
+                    <div class="item-main">
+                        <h4 data-i18n="skill3_title">Product Strategy</h4>
+                        <p data-i18n="skill3_desc">Bridging the gap between business goals and user needs through
+                            data-driven design audits.
+                        </p>
+                    </div>
+                    <div class="item-footer">
+                        <div class="tool-pills">
+                            <span>UX Audit</span>
+                            <span>SEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-header reveal-on-scroll" id="contactHeader">
+            <h2 data-i18n="contact_title">Get in touch</h2>
+            <span class="work-count" data-i18n="contact_subtitle">(Contact)</span>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info reveal-on-scroll">
+                <div class="contact-text-block">
+                    <p class="contact-lead" data-i18n="contact_lead">
+                        Have a project in mind? Let's build something great together.
+                    </p>
+                    <div class="availability-badge">
+                        <span class="dot"></span> <span data-i18n="available_projects">Available for new projects</span>
+                    </div>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-method-item">
+                        <span class="method-label" data-i18n="label_email">Email me</span>
+                        <a href="mailto:adhameldeeb2015@hotmail.com" class="email-link">adhameldeeb2015@hotmail.com</a>
+                    </div>
+
+                    <div class="contact-method-item">
+                        <span class="method-label" data-i18n="label_location">Location</span>
+                        <p class="location-text" data-i18n="cairo_world">Cairo, Egypt / Remote Worldwide</p>
+                    </div>
+                </div>
+
+                <div class="social-wrapper">
+                    <span class="method-label" data-i18n="label_social">Social</span>
+                    <div class="social-links-grid">
+                        <a href="#" class="social-item">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://github.com/AdhamWael" class="social-item">
+                            <i class="fab fa-github"></i>
+                            <span>Github</span>
+                        </a>
+                        <a href="#" class="social-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper reveal-on-scroll">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h3 data-i18n="send_message">Send a Message</h3>
+                        <p data-i18n="respond_time">I usually respond within 24 hours.</p>
+                    </div>
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" class="modern-form">
+                        <!-- Web3Forms Access Key - Replace with your own key if needed -->
+                        <input type="hidden" name="access_key" value="40f020ef-22b4-4b00-88bc-b9adc6d80fb4">
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" data-i18n="form_name">Name</label>
+                                <input type="text" name="name" id="name" placeholder="John Doe" required
+                                    data-i18n-placeholder="placeholder_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-i18n="form_email">Email</label>
+                                <input type="email" name="email" id="email" placeholder="john@example.com" required
+                                    data-i18n-placeholder="placeholder_email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="form_subject">Subject</label>
+                            <input type="text" name="subject" id="subject" placeholder="Project Inquiry"
+                                data-i18n-placeholder="placeholder_subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" data-i18n="form_message">Message</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Tell me about your project..."
+                                required data-i18n-placeholder="placeholder_message"></textarea>
+                        </div>
+                        <div id="form-status"></div>
+                        <button type="submit" class="submit-btn">
+                            <span data-i18n="send_btn">Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--
+    <section class="pricing-section" id="pricing">
+        <div class="section-header reveal-on-scroll" id="pricingHeader">
+            <h2>Pricing</h2>
+            <span class="work-count">($)</span>
+        </div>
+        <div class="pricing-grid reveal-on-scroll">
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3>Basic</h3>
+                    <p class="price">$999</p>
+                    <p class="description">Perfect for personal portfolios and small landing pages.</p>
+                </div>
+                <ul class="features-list">
+                    <li>One Page Design</li>
+                    <li>Mobile Responsive</li>
+                    <li>Basic SEO</li>
+                    <li>Contact Form</li>
+                    <li>1 Week Support</li>
+                </ul>
+                <a href="#contact" class="btn-pricing">Get Started</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="card-header">
+                    <h3>Standard</h3>
+                    <p class="price">$2,499</p>
+                    <p class="description">Ideal for small businesses and startups.</p>
+                </div>
+                <ul class="features-list">
+                    <li>Up to 5 Pages</li>
+                    <li>CMS Integration</li>
+                    <li>Advanced SEO</li>
+                    <li>Analytics Setup</li>
+                    <li>1 Month Support</li>
+                </ul>
+                <a href="#contact" class="btn-pricing">Get Started</a>
+            </div>
+            <div class="pricing-card">
+                <div class="card-header">
+                    <h3>Premium</h3>
+                    <p class="price">$4,999+</p>
+                    <p class="description">For complex web applications and e-commerce.</p>
+                </div>
+                <ul class="features-list">
+                    <li>Custom Web App</li>
+                    <li>E-commerce Functionality</li>
+                    <li>User Authentication</li>
+                    <li>Database Integration</li>
+                    <li>3 Months Support</li>
+                </ul>
+                <a href="#contact" class="btn-pricing">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="estimate-section" id="estimate">
+        <div class="section-header reveal-on-scroll" id="estimateHeader">
+            <h2>Estimate</h2>
+            <span class="work-count">(CALC)</span>
+        </div>
+        <div class="estimate-container reveal-on-scroll">
+            <div class="estimate-form">
+                <h3>Calculate Your Project</h3>
+                <form id="estimateForm">
+                    <div class="form-group">
+                        <label for="projectType">Project Type</label>
+                        <select id="projectType" title="Select project type">
+                            <option value="1000" data-i18n="opt_landing">Landing Page ($1,000)</option>
+                            <option value="2500" data-i18n="opt_corp">Corporate Website ($2,500)</option>
+                            <option value="5000" data-i18n="opt_ecommerce">E-commerce ($5,000)</option>
+                            <option value="8000" data-i18n="opt_webapp">Web Application ($8,000)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="pageValue" data-i18n="label_pages">Number of Pages</label>
+                        <input type="range" id="pageCount" min="1" max="20" value="1" title="Select number of pages">
+                        <span id="pageValue" data-i18n-count="1">1 Page</span> <span data-i18n="plus_page">(+$100/page)</span>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label>
+                            <input type="checkbox" value="500" class="addon">
+                            CMS Integration (+$500)
+                        </label>
+                        <label>
+                            <input type="checkbox" value="300" class="addon">
+                            SEO Optimization (+$300)
+                        </label>
+                        <label>
+                            <input type="checkbox" value="200" class="addon">
+                            Dark Mode (+$200)
+                        </label>
+                    </div>
+                    <div class="total-estimate">
+                        <span data-i18n="label_total">Estimated Cost:</span>
+                        <span id="totalCost">$1,100</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="policy-section" id="policy">
+        <div class="section-header reveal-on-scroll" id="policyHeader">
+            <h2>Policy</h2>
+            <span class="work-count">(RULES)</span>
+        </div>
+        <div class="policy-content reveal-on-scroll">
+            <div class="policy-column">
+                <h3>Invoices</h3>
+                <p>Invoices are issued upon project milestones. A 50% deposit is required to commence work, with the
+                    remaining 50% due upon project completion and approval.</p>
+            </div>
+            <div class="policy-column">
+                <h3>Payment Methods</h3>
+                <p>We accept bank transfers, credit cards (via Stripe), and PayPal. All payments must be made within 14
+                    days of the invoice date.</p>
+            </div>
+            <div class="policy-column">
+                <h3>Revisions</h3>
+                <p>Two rounds of revisions are included in each package. Additional revisions will be charged at an
+                    hourly rate of $100/hr.</p>
+            </div>
+        </div>
+    </section>
+-->
+    <section id="services" class="services-section-wrapper">
+        <div class="services-section">
+            <div class="section-header reveal-on-scroll" id="servicesHeader">
+                <h2 data-i18n="services_title">Services</h2>
+                <span class="work-count" data-i18n="services_subtitle">(What I Do)</span>
+            </div>
+            <div class="services-list">
+                <div class="service-item reveal-on-scroll">
+                    <div class="service-header-main">
+                        <span class="service-icon">
+                            <i class="fas fa-bezier-curve"></i>
+                        </span>
+                        <div class="service-title-group">
+                            <h3 class="service-title" data-i18n="service1_title">Web Design</h3>
+                            <p class="service-short-desc" data-i18n="service1_short">Aesthetic digital experiences.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <p data-i18n="service1_desc">Crafting visually compelling and user-centric digital
+                                interfaces that tell your brand's
+                                unique story through modern aesthetics and purposeful design.</p>
+                            <div class="service-tags">
+                                <span data-i18n="tag_art">Art Direction</span>
+                                <span data-i18n="tag_story">Visual Storytelling</span>
+                                <span data-i18n="tag_resp">Responsive Layouts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-item reveal-on-scroll">
+                    <div class="service-header-main">
+                        <span class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </span>
+                        <div class="service-title-group">
+                            <h3 class="service-title" data-i18n="service2_title">Development</h3>
+                            <p class="service-short-desc" data-i18n="service2_short">High-performance solutions.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <p data-i18n="service2_desc">Building high-performance, scalable web applications with clean
+                                code and cutting-edge
+                                technologies. Focused on speed, security, and accessibility.</p>
+                            <div class="service-tags">
+                                <span data-i18n="tag_next">React / Next.js</span>
+                                <span data-i18n="tag_custom">Custom Code</span>
+                                <span data-i18n="tag_api">API Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-item reveal-on-scroll">
+                    <div class="service-header-main">
+                        <span class="service-icon">
+                            <i class="fas fa-user-astronaut"></i>
+                        </span>
+                        <div class="service-title-group">
+                            <h3 class="service-title" data-i18n="service3_title">UI/UX Design</h3>
+                            <p class="service-short-desc" data-i18n="service3_short">User-centered interfaces.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <p data-i18n="service3_desc">Designing intuitive user journeys and interfaces that
+                                prioritize accessibility and
+                                seamless interaction across all devices and platforms.</p>
+                            <div class="service-tags">
+                                <span data-i18n="tag_research">User Research</span>
+                                <span data-i18n="tag_proto">Prototyping</span>
+                                <span data-i18n="tag_design">Design Systems</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-item reveal-on-scroll">
+                    <div class="service-header-main">
+                        <span class="service-icon">
+                            <i class="fas fa-fire"></i>
+                        </span>
+                        <div class="service-title-group">
+                            <h3 class="service-title" data-i18n="service4_title">Branding</h3>
+                            <p class="service-short-desc" data-i18n="service4_short">Cohesive visual identity.</p>
+                        </div>
+                        <div class="service-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                    <div class="service-details">
+                        <div class="service-details-content">
+                            <p data-i18n="service4_desc">Creating cohesive visual identities that resonate with your
+                                audience and build lasting
+                                brand authority through strategic design and storytelling.</p>
+                            <div class="service-tags">
+                                <span data-i18n="tag_logo">Logo Design</span>
+                                <span data-i18n="tag_color">Color Schemes</span>
+                                <span data-i18n="tag_brand">Brand Strategy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <div class="footer-background-wrapper">
+        <footer class="site-footer">
+            <div class="footer-top">
+                <div class="footer-slogan">
+                    <h2 class="massive-text1 line-11 reveal-on-scroll" data-i18n="footer_slogan1">Designed with class.
+                    </h2>
+                    <h2 class="massive-text1 line-12 reveal-on-scroll" data-i18n="footer_slogan2">Built to last.</h2>
+                </div>
+                <div class="footer-cta-container reveal-on-scroll">
+                    <a href="#contact" class="big-cta-link"><span data-i18n="start_project">Start a Project</span> <span
+                            class="arrow-right">↗</span></a>
+                </div>
+            </div>
+
+            <div class="footer-main">
+                <div class="footer-column info-col">
+                    <div class="footer-logo" data-i18n="adham_name">Adham Eldeeb</div>
+                    <p class="footer-tagline" data-i18n="footer_tagline">Designing experiences that resonate. Building
+                        solutions that last.</p>
+                    <div class="dynamic-clock" id="footerClock">
+                        <span class="clock-label" data-i18n="local_time">Local Time:</span>
+                        <span class="clock-time">00:00:00</span>
+                        <span class="location" data-i18n="cairo_eg">Cairo, EG</span>
+                    </div>
+                </div>
+
+                <div class="footer-nav-groups">
+                    <div class="footer-column">
+                        <h3 class="footer-label" data-i18n="footer_nav_label">Navigation</h3>
+                        <nav class="footer-nav">
+                            <a href="#selectedWork" data-i18n="nav_work">Work</a>
+                            <a href="#about" data-i18n="nav_about">About</a>
+                            <a href="#services" data-i18n="nav_services">Services</a>
+                            <a href="#contact" data-i18n="nav_contact">Contact</a>
+                        </nav>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 class="footer-label">Social</h3>
+                        <nav class="footer-nav">
+                            <a href="#" target="_blank"> <i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="#" target="_blank"> <i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/AdhamWael" target="_blank"> <i class="fab fa-github"></i>
+                                Github</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-legal-links">
+                    <a href="#" data-i18n="privacy">Privacy Policy</a>
+                    <a href="#" data-i18n="terms">Terms of Service</a>
+                </div>
+                <div class="footer-copyright">
+                    <p data-i18n="copyright">&copy; 2025 Adham Eldeeb. Credits to inspiration.</p>
+                </div>
+                <div class="back-to-top-wrapper">
+                    <a href="#home" class="back-to-top">
+                        <span data-i18n="back_to_top">Back to top</span>
+                        <div class="circle-arrow">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal" data-lenis-prevent>
+        <div class="modal-content">
+            <header class="modal-project-hero">
+                <div class="modal-hero-top">
+                    <span class="modal-category" id="modalCategory">Category</span>
+                    <h2 class="modal-title" id="modalTitle">Project Title</h2>
+                </div>
+                <div class="modal-image-container">
+                    <img src="" alt="" class="modal-image" id="modalImage1">
+                </div>
+            </header>
+
+            <div class="modal-project-body">
+                <div class="modal-intro">
+                    <p class="modal-description" id="modalDescription">
+                        Project description goes here. This is a placeholder for the actual project details.
+                    </p>
+                </div>
+
+                <div class="project-case-study">
+                    <aside class="modal-sidebar">
+                        <div class="modal-block">
+                            <h3 class="modal-label">Client</h3>
+                            <p class="modal-text" id="modalClientText">Fashion Brand Co.</p>
+                        </div>
+                        <div class="modal-block">
+                            <h3 class="modal-label">Role</h3>
+                            <p class="modal-text" id="modalRoleText">Frontend Developer<br>UI Designer</p>
+                        </div>
+                        <div class="modal-block">
+                            <h3 class="modal-label">Link</h3>
+                            <a href="#" class="visit-project-btn" id="modalLinkBtn">Visit Site ↗</a>
+                        </div>
+                    </aside>
+
+                    <main class="modal-main">
+                        <div class="modal-section">
+                            <h3 class="modal-label">The Challenge</h3>
+                            <p class="modal-text" id="modalChallengeText">
+                                Detailed challenge description...
+                            </p>
+                        </div>
+                        <div class="modal-section">
+                            <h3 class="modal-label">The Solution</h3>
+                            <p class="modal-text" id="modalSolutionText">
+                                Detailed solution description...
+                            </p>
+                        </div>
+                        <div class="modal-gallery">
+                            <img src="" alt="Detail View" class="modal-image2" id="modalImage2">
+                        </div>
+                    </main>
+                </div>
+
+                <footer class="modal-footer">
+                    <div class="modal-footer-line"></div>
+                    <button class="close-project-btn" data-i18n="close_case">Close Case Study</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <button class="close-button" aria-label="Close modal">&times;</button>
+    <!-- Project Image Hover Container -->
+    <div class="project-hover-container" id="projectHoverContainer">
+        <img src="" alt="Project Preview" id="projectHoverImage">
+    </div>
+
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="three-scene.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
